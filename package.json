@@ -9,6 +9,7 @@
     "swagger": "swagger-jsdoc -d swaggerDef.js && mv swagger.json ./public/."
   },
   "dependencies": {
+    "antd": "^4.18.2",
     "mongoose": "^6.1.5",
     "next": "9.5.4",
     "prettier": "^2.1.2",

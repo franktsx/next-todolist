@@ -22,7 +22,7 @@ function Create(props: CreateProps) {
     event.preventDefault()
 
     // construct new todo, create variable, check it item.current is not null to pass type checks
-    let todo: Todo = { item: "", completed: false, priority: "" }
+    let todo: Todo = { item: "", completed: false, priority: "" }  
     if (null !== item.current && null !== priority.current) {
         todo = { item: item.current.value, completed: false, priority: priority.current.value }
     }
@@ -44,8 +44,8 @@ function Create(props: CreateProps) {
     <div>
       <h1>Create a New Todo</h1>
       <form onSubmit={handleSubmit}>
-        item*: <input type="text" ref={item}></input>
-        priority*: <input type="number" ref={priority} min="1" max="5" ></input>
+        item: <input type="text" ref={item}></input>
+        priority: <input type="text" ref={priority}></input>
         <div>
             <input type="submit" value="create todo"></input>
         </div>

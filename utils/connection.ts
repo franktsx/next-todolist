@@ -15,6 +15,7 @@ export const connect = async () => {
   const TodoSchema = new mongoose.Schema({
     item: String,
     completed: Boolean,
+    priority: String,
   })
 
   // OUR TODO MODEL
