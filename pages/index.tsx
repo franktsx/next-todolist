@@ -38,9 +38,10 @@ function Index(props: IndexProps) {
       {/* MAPPING OVER THE TODOS */}
       <div className="header">
         <input
-          onInput={(e) => searchItems(e.target.value)}
+          onChange={(e) => searchItems(e.target.value)}
           type="text"
           placeholder="Search by item name..."
+          aria-label="search"
         />
       </div>
       {sortedItem.map(t => (

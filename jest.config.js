@@ -1,7 +1,10 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-    setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-    testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
-    moduleNameMapper: {
-      '\\.(scss|sass|css)$': 'identity-obj-proxy',
-    },
+  coverageDirectory: "coverage",
+  preset: 'ts-jest',
+  transform: {
+    '^.+\\.tsx?$': 'babel-jest',
+  },
+  testEnvironment: "jsdom",
+  testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$"
 };

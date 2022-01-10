@@ -2,6 +2,91 @@ import { NextApiRequest, NextApiResponse } from "next"
 import { connect } from "../../../utils/connection"
 import { ResponseFuncs } from "../../../utils/types"
 
+/**
+ * @swagger
+ *
+ * components:
+ *   query:
+ *     getResponse:
+ *        type: object
+ *        properties:
+ *          _id: 
+ *             type: number
+ *          item: 
+ *             type: string
+ *          completed: 
+ *             type: boolean
+ *          priority: 
+ *             type: string
+ *   edit:    
+ *     putResponse:
+ *        type: object
+ *        properties:
+ *          _id: 
+ *             type: number
+ *          item: 
+ *             type: string
+ *          completed: 
+ *             type: boolean
+ *          priority: 
+ *             type: string
+ *        
+ * tags:
+ *   - name: Individually Item API
+ *     description: Individually item action API 
+ *
+ * /[id]:
+ *   get:
+ *     description: Query and delete item API
+ *     tags: [Query and Delete]
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: _id
+ *         in: query
+ *         required: true
+ *         type: number
+ *         description: Item id
+ *     responses:
+ *       201:
+ *         description: Sample response
+ *         schema:
+ *           $ref: '#/components/query/getResponse'
+ * /[id]:
+ *    put:
+ *      description: Update item name, priority, completed status API
+ *      tags: [Edit]
+ *      produces:
+ *        - application/json
+ *      parameters:
+ *        - name: _id
+ *          in: query
+ *          required: true
+ *          type: number
+ *          description: Item id
+ *        - name: _id
+ *          in: query
+ *          required: true
+ *          type: number
+ *          description: Item id
+ *        - name: _id
+ *          in: query
+ *          required: true
+ *          type: number
+ *          description: Item id
+ *        - name: _id
+ *          in: query
+ *          required: true
+ *          type: number
+ *          description: Item id
+ *      responses:
+ *        201:
+ *          description: Sample response
+ *          schema:
+ *            $ref: '#/components/edit/putResponse'
+ * 
+ */
+
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   //capture request method, we type it as a key of ResponseFunc to reduce typing later
   const method: keyof ResponseFuncs = req.method as keyof ResponseFuncs

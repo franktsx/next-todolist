@@ -1,0 +1,41 @@
+// import React from 'react'
+// import { render } from '@testing-library/react'
+// import Create from '../pages/todos/create'
+
+// const todoList = [
+//     {_id:1, item:"haha", completed:false, priority:"2"},
+//     {_id:2, item:"wawa", completed:false, priority:"1"}
+// ];
+
+// const props = {
+//     todos: [
+//         {
+//             _id: 1,
+//             item: "haha",
+//             completed: false,
+//             priority: "2"
+//         },
+//         {
+//             _id: 2,
+//             item: "wawa",
+//             completed: false,
+//             priority: "1"
+//         },
+//     ]
+// }
+
+// describe('Should render <Index />', () => {
+//     it('should render <Index />', () => {
+//         const index = render(<Index todos={props.todos}/>);
+//         expect(index).toBeTruthy()
+//     });
+// })
+
+// test('we should have todos 1 and 2', () => {
+//     expect(todoList).toEqual(
+//         expect.arrayContaining([
+//             expect.objectContaining({_id: 1}),
+//             expect.objectContaining({_id: 2}),
+//         ])
+//     );
+// });

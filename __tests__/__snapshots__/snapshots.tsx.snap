@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders homepage unchanged 1`] = `
+<div>
+  <div>
+    <h1>
+      My Todo List
+    </h1>
+    <h2>
+      Click On Todo to see it individually and editing
+    </h2>
+    <button>
+      Create a New Todo
+    </button>
+    <div
+      class="header"
+    >
+      <input
+        placeholder="Search by item name..."
+        type="text"
+      />
+    </div>
+  </div>
+</div>
+`;

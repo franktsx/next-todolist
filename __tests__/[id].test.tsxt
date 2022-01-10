@@ -1,0 +1,35 @@
+// import React from 'react'
+// import { render } from '@testing-library/react'
+// import Show from '../pages/todos/[id]'
+
+// const todoList = [
+//     {_id:1, item:"haha", completed:false, priority:"2"},
+//     {_id:2, item:"wawa", completed:false, priority:"1"}
+// ];
+
+// const props = {
+//     todo: [
+//         {
+//             _id: 1,
+//             item: "haha",
+//             completed: false,
+//             priority: "2"
+//         },
+//     ],
+//     url: "localhost:3000/api"
+// }
+
+// describe('Should render <Show />', () => {
+//     it('should render <Show />', () => {
+//         const show = render(<Show {...props}/>);
+//         expect(show).toBeTruthy()
+//     });
+// })
+
+// test('we should have todos 1 and 2', () => {
+//     expect(todoList).toEqual(
+//         expect.arrayContaining([
+//             expect.objectContaining({_id: 1}),
+//         ])
+//     );
+// });
