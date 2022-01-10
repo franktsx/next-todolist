@@ -52,6 +52,8 @@ import { ResponseFuncs } from "../../../utils/types"
  *         description: query successed
  *         schema:
  *           $ref: '#/components/query/getResponse'
+ *       400:
+ *         description: No Response for This Request
  * 
  *   post:
  *     description: Create item API
@@ -79,6 +81,8 @@ import { ResponseFuncs } from "../../../utils/types"
  *         description: item updated
  *         schema:
  *           $ref: '#/components/post/postResponse'
+ *       400:
+ *         description: No Response for This Request
  */
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

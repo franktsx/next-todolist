@@ -90,4 +90,10 @@ describe('Should render <Index />', () => {
             ])
         );
     })
+
+    it('frontend input', () => {
+        const {input} = setup()
+        fireEvent.change(input, {target: {value: 'haha'}})
+        expect(todoList).toBe('haha');
+    })
 })

@@ -60,6 +60,8 @@ import { ResponseFuncs } from "../../../utils/types"
  *         description: query successed
  *         schema:
  *           $ref: '#/components/query/getResponse'
+ *       400:
+ *         description: No Response for This Request
  *   delete:
  *     description: Delete item
  *     tags: [Delete item]
@@ -76,6 +78,8 @@ import { ResponseFuncs } from "../../../utils/types"
  *         description: deleted completed
  *         schema:
  *           $ref: '#/components/del/getResponse'
+ *       400:
+ *         description: No Response for This Request
  *   put:
  *     description: Update item info
  *     tags: [Update item info]
@@ -109,6 +113,8 @@ import { ResponseFuncs } from "../../../utils/types"
  *         description: item updated
  *         schema:
  *           $ref: '#/components/put/getResponse'
+ *       400:
+ *         description: No Response for This Request
  */
  
 
