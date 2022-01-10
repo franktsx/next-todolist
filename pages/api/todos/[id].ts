@@ -18,8 +18,8 @@ import { ResponseFuncs } from "../../../utils/types"
  *             type: boolean
  *          priority: 
  *             type: string
- *   edit:    
- *     putResponse:
+ *   del:    
+ *     getResponse:
  *        type: object
  *        properties:
  *          _id: 
@@ -30,15 +30,23 @@ import { ResponseFuncs } from "../../../utils/types"
  *             type: boolean
  *          priority: 
  *             type: string
- *        
- * tags:
- *   - name: Individually Item API
- *     description: Individually item action API 
+ *   put:    
+ *     getResponse:
+ *        type: object
+ *        properties:
+ *          _id: 
+ *             type: number
+ *          item: 
+ *             type: string
+ *          completed: 
+ *             type: boolean
+ *          priority: 
+ *             type: string
  *
  * /[id]:
  *   get:
- *     description: Query and delete item API
- *     tags: [Query and Delete]
+ *     description: Query item info
+ *     tags: [Get item info]
  *     produces:
  *       - application/json
  *     parameters:
@@ -49,43 +57,60 @@ import { ResponseFuncs } from "../../../utils/types"
  *         description: Item id
  *     responses:
  *       201:
- *         description: Sample response
+ *         description: query successed
  *         schema:
  *           $ref: '#/components/query/getResponse'
- * /[id]:
- *    put:
- *      description: Update item name, priority, completed status API
- *      tags: [Edit]
- *      produces:
- *        - application/json
- *      parameters:
- *        - name: _id
- *          in: query
- *          required: true
- *          type: number
- *          description: Item id
- *        - name: _id
- *          in: query
- *          required: true
- *          type: number
- *          description: Item id
- *        - name: _id
- *          in: query
- *          required: true
- *          type: number
- *          description: Item id
- *        - name: _id
- *          in: query
- *          required: true
- *          type: number
- *          description: Item id
- *      responses:
- *        201:
- *          description: Sample response
- *          schema:
- *            $ref: '#/components/edit/putResponse'
- * 
+ *   delete:
+ *     description: Delete item
+ *     tags: [Delete item]
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: _id
+ *         in: query
+ *         required: true
+ *         type: number
+ *         description: Item id
+ *     responses:
+ *       201:
+ *         description: deleted completed
+ *         schema:
+ *           $ref: '#/components/del/getResponse'
+ *   put:
+ *     description: Update item info
+ *     tags: [Update item info]
+ *     produces:
+ *       - application/json
+ *     summary: Updates a item in the store with form data
+ *     parameters:
+ *       - name: _id
+ *         in: query
+ *         required: true
+ *         schema:
+ *            type: number
+ *         description: Item id
+ *     requestBody:
+ *       content:
+ *         application/json:
+ *            schema:
+ *               type: object
+ *               properties: 
+ *                  item: 
+ *                     description: Updated name of the item
+ *                     type: string
+ *                  completed:
+ *                     description: Updated completed of the item
+ *                     type: boolean
+ *                  priority:
+ *                     description: Updated priority of the item
+ *                     type: string
+ *     responses:
+ *       201:
+ *         description: item updated
+ *         schema:
+ *           $ref: '#/components/put/getResponse'
  */
+ 
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   //capture request method, we type it as a key of ResponseFunc to reduce typing later
